@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlappyAI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="resources/sigma.min.js"></script>
+    <script src="resources/sigma.parsers.json.min.js"></script>
+    <script src="scripts/pipe.js"></script>
+    <script src="scripts/bird.js"></script>
+    <script src="scripts/neural_network.js"></script>
+    <script src="scripts/control.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:900" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="game">
+        <h4 id="punkte">0</h4>
+        <div id="pipes"></div>
+        <div id="birds"></div>
+    </div>
+    <input type="text" id="inputValue" autofocus="autofocus" />
+
+    <div id="network">
+        <h4 style="text-align: center;">Neural Network</h4>
+    </div>
+</body>
+
+</html>
