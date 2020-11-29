@@ -4,7 +4,7 @@ class Bird {
     this.y = 390;
     this.id = Math.floor(Math.random() * 1000000);
     this.gravity = 1;
-    this.brain = new Neural_Network(["4", "7", "5", "3", "1"], this);
+    this.brain = new Neural_Network(["4", "6", "3", "1"], this);
     this.inputValues = [[1], [1], [1], [1]];
     this.bestbird = false;
     this.punkte = 0;

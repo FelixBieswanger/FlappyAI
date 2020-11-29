@@ -4,7 +4,7 @@ var framesThisSecond = 0;
 var lastFpsUpdate = 0;
 var simulation_speed_ms;
 var r = 0;
-var population = 5;
+var population = 1;
 var game;
 var draw_timer;
 var pipes = [];
@@ -89,7 +89,7 @@ function gameloop() {
 
   //get active pipe
   var activePipe;
-  if (pipes.length == 3) {
+  if (pipes.length == 3 && !pipes9[0].x > 30) {
     activePipe = pipes[1];
   } else {
     activePipe = pipes[0];

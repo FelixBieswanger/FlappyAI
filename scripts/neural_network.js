@@ -15,13 +15,20 @@ class Neural_Network {
 
   feed_forward_ad() {
     //returns true if jump
-    var input_vector = this.normalize(this.bird.inputValues, 1, 0);
+    var input_vector = this.normalize(this.bird.inputValues.slice(), 1, 0);
+    console.log("input", input_vector);
+
+    this.layers = [];
 
     for (var i = 0; i < this.net.length; i++) {
       let weights = this.net[i][0].map((_, colIndex) =>
         this.net[i].map((row) => row[colIndex])
       );
       input_vector = this.matrixmultiply(weights, input_vector);
+      for (var j = 0; j < input_vector.length; j++) {
+        input_vector[j][0] = this.sigmoid(input_vector[j][0]);
+      }
+      console.log(input_vector);
       this.layers.push(input_vector);
     }
 
@@ -75,7 +82,7 @@ class Neural_Network {
     }
 
     var nodes = this.sigma.graph.nodes();
-    var node_values = this.bird.inputValues;
+    var node_values = this.bird.inputValues.slice();
 
     for (var i = 0; i < this.layers.length; i++) {
       for (var j = 0; j < this.layers[i].length; j++) {
@@ -132,11 +139,14 @@ class Neural_Network {
     return m;
   }
 
-  normalize(arr, max, min) {
-    var ne = arr;
-    for (var i = 0; i < ne.length; i++) {
-      ne[i][0] = 1 / (1 + Math.exp(ne[i][0]));
-    }
-    return ne;
+  normalize(arr) {
+    var result = [];
+    var a = [];
+    arr.forEach((element) => {
+      a.push(parseFloat(element[0]));
+    });
+
+    a.forEach((el) => result.push([(el - 800) / (800 - 0)]));
+    return result;
   }
 }
