@@ -1,75 +1,76 @@
-body{
-    margin: 0 auto;
+body {
+  margin: 0 auto;
 }
 
-#game{
-    width: 800px;
-    height: 700px;
-    position: relative;
-    background-color: black;
-    background-image: url(resources/pixel_art_landscape_by_mockingjay1701-d8omc3c.png);
-    z-index: 0;
-    float:left;
+#game {
+  width: 800px;
+  height: 700px;
+  position: relative;
+  background-color: black;
+  background-image: url(resources/pixel_art_landscape_by_mockingjay1701-d8omc3c.png);
+  z-index: 0;
+  float: left;
 }
 
-.bird{
-    width: 40px;
-    height: 40px;
-    background-color: none;
-    position: absolute;
-    z-index: 2;
+.bird {
+  width: 40px;
+  height: 40px;
+  background-color: none;
+  position: absolute;
+  z-index: 2;
 }
 
-#punkte{
-    padding-top: 50px;
-    text-align: center;
-    font-size: 50px;
-    color: dimgrey;
-    font-family: 'Orbitron', sans-serif;
-    z-index: 3;
+#punkte {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 50px;
+  color: dimgrey;
+  font-family: "Orbitron", sans-serif;
+  z-index: 3;
 }
 
-
-.pipe{
-    position: absolute;
-    bottom: 0px;
-    background-color: darkseagreen;
-    z-index: -1;
-    width: 80px;
+.pipe {
+  position: absolute;
+  bottom: 0px;
+  background-color: darkseagreen;
+  z-index: -1;
+  width: 80px;
 }
 
-
-#inputValue{
-    left: -99999px;
-    position: absolute;
+#inputValue {
+  left: -99999px;
+  position: absolute;
 }
 
-#gameOver{
-    width: 100%;
-    height: auto;
-    background-color: rgba(114, 19, 51, 0.4);
-    z-index: 4;
-    text-align: center;
-    display: block;
-  
+#gameOver {
+  width: 100%;
+  height: auto;
+  background-color: rgba(114, 19, 51, 0.4);
+  z-index: 4;
+  text-align: center;
+  display: block;
 }
 
-h1{
-    text-transform: uppercase;
-    color: white;
-    font-weight: 500;
-    margin-top: 15px;
-    margin-bottom: 10px;
+h1 {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
-#button{
-    margin-bottom: 15px;
+#button {
+  margin-bottom: 15px;
 }
 
-#network{
-    float: left;
-    width: 550px;
-    height: 700px;
-    margin-left: 50px;
-    border: 1px solid black;
+#network {
+  float: left;
+  width: 550px;
+  height: 700px;
+  margin-left: 50px;
+  border: 1px solid black;
+}
+
+#slider {
+  width: 50%;
 }
