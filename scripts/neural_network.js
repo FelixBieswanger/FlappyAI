@@ -81,6 +81,26 @@ class Neural_Network {
           }
         }
       }
+
+      var edges = this.sigma.graph.edges();
+      var edges_value = [];
+
+      for (var i = 0; i < this.weights.length; i++) {
+        let matrix = this.weights[i];
+        let transpose = matrix[0].map((_, colIndex) =>
+          matrix.map((row) => row[colIndex])
+        );
+
+        var flatten = [].concat.apply([], transpose);
+
+        for (var j = 0; j < flatten.length; j++) {
+          edges_value.push(this.weightColor(flatten[j]));
+        }
+      }
+
+      for (var i = 0; i < edges.length; i++) {
+        edges[i].color = edges_value[i];
+      }
     }
 
     var nodes = this.sigma.graph.nodes();
@@ -94,26 +114,6 @@ class Neural_Network {
 
     for (var i = 0; i < nodes.length; i++) {
       nodes[i].label = String(node_values[i]);
-    }
-
-    var edges = this.sigma.graph.edges();
-    var edges_value = [];
-
-    for (var i = 0; i < this.weights.length; i++) {
-      let matrix = this.weights[i];
-      let transpose = matrix[0].map((_, colIndex) =>
-        matrix.map((row) => row[colIndex])
-      );
-
-      var flatten = [].concat.apply([], transpose);
-
-      for (var j = 0; j < flatten.length; j++) {
-        edges_value.push(this.weightColor(flatten[j]));
-      }
-    }
-
-    for (var i = 0; i < edges.length; i++) {
-      edges[i].color = edges_value[i];
     }
 
     this.sigma.refresh();
