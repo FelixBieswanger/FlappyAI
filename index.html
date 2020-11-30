@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="resources/sigma.min.js"></script>
     <script src="resources/sigma.parsers.json.min.js"></script>
+    <script src="scripts/population.js"></script>
     <script src="scripts/pipe.js"></script>
     <script src="scripts/bird.js"></script>
     <script src="scripts/neural_network.js"></script>
@@ -19,7 +20,7 @@
 
 <body>
     <div id="slidercontainer">
-        <input id="slider" type="range" min="1" max="1000" value="1000">
+        <input id="slider" type="range" min="1" max="30000" value="30">
         <p id="slideroutput"></p>
     </div>
     <div id="game">
@@ -27,7 +28,6 @@
         <div id="pipes"></div>
         <div id="birds"></div>
     </div>
-    <p id="fpsDisplay"></p>
     <input type="text" id="inputValue" autofocus="autofocus" />
 
     <div id="network">

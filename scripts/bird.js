@@ -4,7 +4,7 @@ class Bird {
     this.y = 390;
     this.id = Math.floor(Math.random() * 1000000);
     this.gravity = 1;
-    this.brain = new Neural_Network(["4", "6", "3", "1"], this);
+    this.brain = new Neural_Network(["4", "5", "3", "1"]);
     this.inputValues = [[1], [1], [1], [1]];
     this.bestbird = false;
     this.punkte = 0;
@@ -22,7 +22,7 @@ class Bird {
   show() {
     if (this.bestbird) {
       document.getElementById("bird" + this.id).style.opacity = 1;
-      this.brain.show_gui();
+      this.brain.show_gui(this.inputValues);
     } else {
       document.getElementById("bird" + this.id).style.opacity = 0.3;
     }
@@ -38,7 +38,7 @@ class Bird {
     if (this.y > 10) {
       this.y = this.y - this.gravity;
 
-      if (this.brain.feed_forward_ad()) {
+      if (this.brain.feed_forward_ad(this.inputValues)) {
         this.jump();
       }
     }
