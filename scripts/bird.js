@@ -1,10 +1,10 @@
 class Bird {
-  constructor() {
+  constructor(gene) {
     this.x = 30 + Math.floor(Math.random() * 50 - 10);
     this.y = 390;
     this.id = Math.floor(Math.random() * 1000000);
     this.gravity = 1;
-    this.brain = new Neural_Network(["4", "5", "3", "1"]);
+    this.brain = new Neural_Network(["4", "3", "1"], gene);
     this.inputValues = [[1], [1], [1], [1]];
     this.bestbird = false;
     this.punkte = 0;

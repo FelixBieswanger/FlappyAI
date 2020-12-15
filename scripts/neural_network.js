@@ -1,5 +1,5 @@
 class Neural_Network {
-  constructor(struc) {
+  constructor(struc, gene) {
     this.weights = [];
     this.biases = [];
     this.layers = [];
@@ -8,13 +8,18 @@ class Neural_Network {
     this.genes = [];
 
     //input layer
+    //no gene there, create fresh one
+    if (gene == -1) {
+      for (var i = 0; i < this.struc.length - 1; i++) {
+        this.weights.push(this.createMatrix(this.struc[i + 1], this.struc[i]));
+      }
 
-    for (var i = 0; i < this.struc.length - 1; i++) {
-      this.weights.push(this.createMatrix(this.struc[i + 1], this.struc[i]));
-    }
-
-    for (var i = 1; i < this.struc.length; i++) {
-      this.biases.push(this.createMatrix(this.struc[i], 1));
+      for (var i = 1; i < this.struc.length; i++) {
+        this.biases.push(this.createMatrix(this.struc[i], 1));
+      }
+    } else {
+      this.weights = gene.weights;
+      this.biases = gene.biases;
     }
   }
 
