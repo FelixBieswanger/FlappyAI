@@ -25,10 +25,11 @@
     </div>
     <div>
         <p>Populationsize:</p>
-        <input id="populationsize" type="number" min="1" value="1" style="width: 32px" onchange="this.style.width = ((this.value.length + 3) * 8) + 'px';">
+        <input style="float:left;" id="populationsize" type="number" min="1" value="1" style="width: 32px" onchange="this.style.width = ((this.value.length + 3) * 8) + 'px';">
     </div>
     <div id="slidercontainer">
-        <input id="slider" type="range" min="1" max="30000" value="30">
+        <p>Simulation Speed</p>
+        <input  style="float:left;" id="slider" type="range" min="1" max="100" value="30">
         <p id="slideroutput"></p>
     </div>
     <div id="game">
